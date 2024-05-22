@@ -4,19 +4,7 @@ import { setCurrentStep } from "./store/slices";
 import Controls from "./components/Controls";
 
 const Playground: React.FC = () => {
-  const state = useAppSelector((state) => state.playground);
-  const dispatch = useAppDispatch();
-
-  const [isTimerActive, setIsTimerActive] = useState<boolean>(false);
-  console.log(state);
-  return (
-    <div>
-      <Controls
-        isTimerActive={isTimerActive}
-        setIsTimerActive={setIsTimerActive}
-      />
-    </div>
-  );
+  return <h1>Playground</h1>;
 };
 
 export default Playground;

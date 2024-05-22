@@ -6,9 +6,18 @@ export interface IControlsProps {
 }
 
 const Controls: React.FC<IControlsProps> = (props) => {
-  const {} = props;
+  const { isTimerActive, setIsTimerActive } = props;
 
-  return <div>Controls</div>;
+  return (
+    <div>
+      <button onClick={() => setIsTimerActive(true)} disabled={isTimerActive}>
+        Play
+      </button>
+      <button onClick={() => setIsTimerActive(false)} disabled={!isTimerActive}>
+        Pause
+      </button>
+    </div>
+  );
 };
 
 export default Controls;

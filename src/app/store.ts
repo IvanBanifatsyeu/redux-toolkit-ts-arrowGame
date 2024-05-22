@@ -1,23 +1,30 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit";
 import { combineSlices, configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import playgroundReducer from "../components/Playground/store/slices";
 
-// `combineSlices` automatically combines the reducers using
-// their `reducerPath`s, therefore we no longer need to call `combineReducers`.
+export const store = configureStore({
+  reducer: {
+    playground: playgroundReducer,
+  },
+});
+
+// // `combineSlices` automatically combines the reducers using
+// // their `reducerPath`s, therefore we no longer need to call `combineReducers`.
 const rootReducer = combineSlices();
-// Infer the `RootState` type from the root reducer
+// // Infer the `RootState` type from the root reducer
 export type RootState = ReturnType<typeof rootReducer>;
 
-export const makeStore = (preloadedState?: Partial<RootState>) => {
-  const store = configureStore({
-    reducer: rootReducer,
-  });
+// export const makeStore = (preloadedState?: Partial<RootState>) => {
+//   const store = configureStore({
+//     reducer: rootReducer,
+//   });
 
-  setupListeners(store.dispatch);
-  return store;
-};
+//   setupListeners(store.dispatch);
+//   return store;
+// };
 
-export const store = makeStore();
+// export const store = makeStore();
 
 // Infer the type of `store`
 export type AppStore = typeof store;

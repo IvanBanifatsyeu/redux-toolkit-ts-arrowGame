@@ -16,6 +16,5 @@ export const playgroundSlice = createSlice({
   },
 });
 
-console.log(playgroundSlice);
 export const { setCurrentStep } = playgroundSlice.actions;
 export default playgroundSlice.reducer;

@@ -4,6 +4,7 @@ import { setCurrentStep, setSteps } from "./store/slices";
 import Controls from "./components/Controls";
 import { INTERVAL_TIME } from "./constants";
 import RandomKeys from "./components/RandomKeys";
+import KeyPressed from "./components/KeyPressed";
 
 const Playground: React.FC = () => {
   const state = useAppSelector((state) => state.playground);
@@ -34,6 +35,7 @@ const Playground: React.FC = () => {
         setIsTimerActive={setIsTimerActive}
       />
       <RandomKeys isTimerActive={isTimerActive} />
+      <KeyPressed isTimerActive={isTimerActive} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import type { IMapArrowCodes } from "./types";
 
-export const INTERVAL_TIME: number = 1000;
+export const INTERVAL_TIME: number = 3000;
 
 export const MAP_ARROW_CODES: IMapArrowCodes = {
   ArrowUp: "🔼",

@@ -1,7 +1,8 @@
 // import styles from "./RandomKeys.module.css"
 
-import { useAppSelector } from "../../../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { MAP_ARROW_CODES } from "../../constants";
+import { setUnsuccess } from "../../store/slices";
 import type { IMapArrowCodes } from "../../types";
 
 export interface IRandomKeysProps {
@@ -11,6 +12,7 @@ export interface IRandomKeysProps {
 const RandomKeys: React.FC<IRandomKeysProps> = (props) => {
   // const {isTimerActive} = props
   const state = useAppSelector((state) => state.playground);
+
   console.log(state.steps);
 
   return (

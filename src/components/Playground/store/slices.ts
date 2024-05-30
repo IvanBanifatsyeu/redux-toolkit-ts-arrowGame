@@ -7,6 +7,8 @@ import { ARR_ARROW_CODES, MAP_ARROW_CODES } from "../constants";
 export const initialState: IPlaygroundState = {
   currentStep: 0,
   steps: [],
+  totalSuccessful: 0,
+  totalUnsuccessful: 0,
 };
 
 export const playgroundSlice = createSlice({
@@ -37,6 +39,13 @@ export const playgroundSlice = createSlice({
             success: isSuccess,
           };
         }
+
+        if (isSuccess) {
+          state.totalSuccessful += 1;
+        } else {
+          state.totalUnsuccessful += 1;
+          state.totalSuccessful = 0;
+        }
       }
     },
     setUnsuccess: (state) => {
@@ -47,6 +56,8 @@ export const playgroundSlice = createSlice({
             ...step,
             success: false,
           };
+          state.totalUnsuccessful += 1;
+          state.totalSuccessful = 0;
         }
       }
     },

@@ -8,4 +8,6 @@ export interface IPlaygroundStateStepsState {
 export interface IPlaygroundState {
   currentStep: number;
   steps: IPlaygroundStateStepsState[];
+  totalSuccessful: number;
+  totalUnsuccessful: number;
 }

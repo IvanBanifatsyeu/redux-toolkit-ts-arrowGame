@@ -35,10 +35,11 @@ const Playground: React.FC = () => {
   useEffect(() => {
     const isSuccessful =
       state.totalSuccessful === END_GAME_CONDITIONS.SUCCESS_COUNT;
+
     const isUnSuccessful =
       state.totalUnsuccessful === END_GAME_CONDITIONS.UNSUCCESS_COUNT;
 
-    isShowModal && setIsSuccessEndGame(true);
+    isSuccessful && setIsSuccessEndGame(true);
     isUnSuccessful && setIsSuccessEndGame(false);
 
     if (isSuccessful || isUnSuccessful) {

@@ -1,0 +1,11 @@
+.icon {
+	background-color: rgb(136, 136, 136);
+}
+
+.iconSuccess {
+	background-color: rgb(120, 252, 103);
+}
+
+.iconUnSuccess {
+	background-color: rgb(247, 93, 93);
+}

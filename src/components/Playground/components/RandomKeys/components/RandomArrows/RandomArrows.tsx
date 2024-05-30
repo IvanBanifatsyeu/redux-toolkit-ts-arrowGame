@@ -4,7 +4,6 @@ import { useAppSelector } from "../../../../../../app/hooks";
 import type { IPlaygroundStateStepsState } from "../../../../store/types";
 import { MAP_ARROW_CODES } from "../../../../constants";
 import type { IMapArrowCodes } from "../../../../types";
-
 const RandomArrows: React.FC = () => {
   const state = useAppSelector((state) => state.playground);
 

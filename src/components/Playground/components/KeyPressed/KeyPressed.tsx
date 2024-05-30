@@ -3,7 +3,7 @@
 import { useEffect, useCallback } from "react";
 import { MAP_ARROW_CODES } from "../../constants";
 import { setEnteredValue } from "../../store/slices";
-import { useAppDispatch } from "../../../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { useKeyPressedElement } from "./hooks";
 
 export interface IKeyPressedProps {
@@ -11,6 +11,8 @@ export interface IKeyPressedProps {
 }
 
 const KeyPressed: React.FC<IKeyPressedProps> = (props) => {
+  // const state = useAppSelector((state) => state.playground);
+
   const { isTimerActive } = props;
   const dispatch = useAppDispatch();
   const KeyPressedElement = useKeyPressedElement();
@@ -24,7 +26,7 @@ const KeyPressed: React.FC<IKeyPressedProps> = (props) => {
         dispatch(setEnteredValue(e.key));
       }
     },
-    [dispatch, isTimerActive],
+    [isTimerActive],
   );
 
   useEffect(() => {

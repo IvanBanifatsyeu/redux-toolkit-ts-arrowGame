@@ -1,4 +1,4 @@
-// import styles from "./Controls.module.css"
+import styles from "./Controls.module.css";
 import Button from "../../../UI/Button";
 
 export interface IControlsProps {
@@ -11,10 +11,18 @@ const Controls: React.FC<IControlsProps> = (props) => {
 
   return (
     <div>
-      <Button onClick={() => setIsTimerActive(true)} disabled={isTimerActive}>
+      <Button
+        className={styles.button}
+        onClick={() => setIsTimerActive(true)}
+        disabled={isTimerActive}
+      >
         Play
       </Button>
-      <Button onClick={() => setIsTimerActive(false)} disabled={!isTimerActive}>
+      <Button
+        className={styles.button}
+        onClick={() => setIsTimerActive(false)}
+        disabled={!isTimerActive}
+      >
         Pause
       </Button>
     </div>

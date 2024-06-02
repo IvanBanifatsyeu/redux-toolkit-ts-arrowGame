@@ -1,13 +1,14 @@
 // import styles from "./Score.module.css"
 
 import { useAppSelector } from "../../../../app/hooks";
+import { TypographyHeader } from "../../../UI";
 
 const Score: React.FC = () => {
   const state = useAppSelector((state) => state.playground);
 
   return (
     <div>
-      <h3>Score</h3>
+      <TypographyHeader>Score</TypographyHeader>
       <span>Errors: {state.totalUnsuccessful}</span>
       <br />
       <span>Successful: {state.totalSuccessful}</span>

@@ -7,6 +7,7 @@ import RandomKeys from "./components/RandomKeys";
 import KeyPressed from "./components/KeyPressed";
 import Score from "./components/Score";
 import Modal from "./components/Modal";
+import Description from "./components/Description";
 
 const Playground: React.FC = () => {
   const refreshIntervalId = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -64,6 +65,7 @@ const Playground: React.FC = () => {
           isSuccessEndGame={isSuccessEndGame}
         />
       )}
+      <Description />
     </div>
   );
 };

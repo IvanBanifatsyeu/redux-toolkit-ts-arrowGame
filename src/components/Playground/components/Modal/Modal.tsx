@@ -1,8 +1,10 @@
-// import styles from "./Modal.module.css"
 import { resetStore } from "../../store/slices";
 import { useAppDispatch } from "../../../../app/hooks";
 import ResultMessage from "./components/ResultMessage";
 import { Button } from "../../../UI";
+import { Modal as MaterialModal } from "@mui/material";
+import cn from "classnames";
+import styles from "./Modal.module.css";
 
 export interface IModalProps {
   setIsShowModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -19,12 +21,20 @@ const Modal: React.FC<IModalProps> = (props) => {
   };
 
   return (
-    <div>
-      <h3>Modal</h3>
-      <ResultMessage isSuccessEndGame={isSuccessEndGame} />
-      <br />
-      <Button onClick={handleClose}>Start New Game</Button>
-    </div>
+    <MaterialModal open onClose={handleClose} className={styles.wrapper}>
+      <div
+        className={cn(
+          styles.container,
+          isSuccessEndGame ? styles.modalSuccess : styles.modalUnsuccess,
+        )}
+      >
+        <ResultMessage isSuccessEndGame={isSuccessEndGame} />
+        <br />
+        <Button onClick={handleClose} className={styles.button}>
+          Start New Game
+        </Button>
+      </div>
+    </MaterialModal>
   );
 };
 

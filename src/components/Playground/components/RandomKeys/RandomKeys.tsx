@@ -1,7 +1,6 @@
-// import styles from "./RandomKeys.module.css"
-
 import { useAppSelector } from "../../../../app/hooks";
 import { TypographyHeader } from "../../../UI";
+import styles from "./RandomKeys.module.css";
 
 import RandomArrows from "./components/RandomArrows";
 import WelcomeText from "./components/WelcomeText";

@@ -1,20 +1,22 @@
-import styles from "./RandomArrows.module.css";
-
 import { useAppSelector } from "../../../../../../app/hooks";
+import cn from "classnames";
 import type { IPlaygroundStateStepsState } from "../../../../store/types";
 import { MAP_ARROW_CODES } from "../../../../constants";
 import type { IMapArrowCodes } from "../../../../types";
+import stylesCommon from "../../RandomKeys.module.css";
+import styles from "./RandomArrows.module.css";
+
 const RandomArrows: React.FC = () => {
   const state = useAppSelector((state) => state.playground);
 
   const getStylesRandomKeys = (elem: IPlaygroundStateStepsState): string => {
     if (elem.success && elem.success !== null) {
-      return styles.iconSuccess;
+      return cn(stylesCommon.icon, styles.iconSuccess);
     }
     if (!elem.success && elem.success !== null) {
-      return styles.iconUnSuccess;
+      return cn(stylesCommon.icon, styles.iconUnSuccess);
     }
-    return styles.icon;
+    return stylesCommon.icon;
   };
   return (
     <>

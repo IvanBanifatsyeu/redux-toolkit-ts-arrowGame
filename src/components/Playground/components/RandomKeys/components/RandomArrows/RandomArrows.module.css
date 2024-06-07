@@ -1,9 +1,7 @@
-.icon {
-	background-color: rgb(136, 136, 136);
-}
+
 
 .iconSuccess {
-	background-color: rgb(120, 252, 103);
+	background-color: var(--color-green)
 }
 
 .iconUnSuccess {

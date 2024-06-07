@@ -10,22 +10,21 @@ const RandomArrows: React.FC = () => {
   const state = useAppSelector((state) => state.playground);
 
   const getStylesRandomKeys = (elem: IPlaygroundStateStepsState): string => {
-    if (elem.success && elem.success !== null) {
-      return cn(stylesCommon.icon, styles.iconSuccess);
-    }
-    if (!elem.success && elem.success !== null) {
-      return cn(stylesCommon.icon, styles.iconUnSuccess);
-    }
-    return stylesCommon.icon;
+    return cn(
+      stylesCommon.icon,
+      elem.success && elem.success !== null && styles.iconSuccess,
+      !elem.success && elem.success !== null && styles.iconUnSuccess,
+    );
   };
+
   return (
-    <>
+    <div className={stylesCommon.wrapper}>
       {state.steps.map((elem: any) => (
         <span key={elem.step} className={getStylesRandomKeys(elem)}>
           {MAP_ARROW_CODES[elem.currentValue as keyof IMapArrowCodes]}
         </span>
       ))}
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
-// import styles from "./WelcomeText.module.css"
-
 import { TypographyText } from "../../../../../UI";
+import loader from "./img/tube-spinner.svg";
+import stylesCommon from "../../RandomKeys.module.css";
+import styles from "./WelcomeText.module.css";
 
 export interface IWelcomeTextProps {
   isTimerActive: boolean;
@@ -10,7 +11,13 @@ const WelcomeText: React.FC<IWelcomeTextProps> = (props) => {
   const { isTimerActive } = props;
 
   if (isTimerActive) {
-    return <span>Loading...</span>;
+    return (
+      <div className={stylesCommon.wrapper}>
+        <span className={stylesCommon.icon}>
+          <img className={styles.loader} src={loader} alt="loader" />
+        </span>
+      </div>
+    );
   }
 
   return (

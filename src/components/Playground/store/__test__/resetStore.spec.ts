@@ -1,9 +1,21 @@
-import playgroundReducer, { initialState } from "../slices";
+import playgroundReducer, {
+  initialState,
+  resetStore,
+  setCurrentStep,
+} from "../slices";
 
-describe("", () => {
-  it("", () => {
-    const state = playgroundReducer({}, {});
+describe("reducer resetStore", () => {
+  it("check resetStore", () => {
+    const setCurrentStepState = playgroundReducer(
+      initialState,
+      setCurrentStep(),
+    );
 
-    expect().toEqual();
+    const resetStoreState = playgroundReducer(
+      setCurrentStepState,
+      resetStore(),
+    );
+
+    expect(resetStoreState).toEqual(initialState);
   });
 });
